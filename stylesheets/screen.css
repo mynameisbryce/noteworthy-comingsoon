@@ -375,11 +375,7 @@ div.form form input:input {
   color: white;
   background-color: black;
 }
-/* line 211, ../sass/screen.scss */
-div.form form input:focus {
-  background-color: black;
-}
-/* line 216, ../sass/screen.scss */
+/* line 214, ../sass/screen.scss */
 div.form form input#Email {
   width: 247px;
   height: 53px;
@@ -400,20 +396,20 @@ div.form form input#Email {
   cursor: auto;
   text-transform: none;
 }
-/* line 231, ../sass/screen.scss */
+/* line 229, ../sass/screen.scss */
 div.form form input#Email:hover {
   background-color: rgba(0, 0, 0, 0.19);
 }
-/* line 235, ../sass/screen.scss */
+/* line 233, ../sass/screen.scss */
 div.form form input#Email.error {
   border: 1px solid rgba(255, 72, 0, 0.8);
 }
-/* line 239, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 div.form form input#Email:focus {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: black;
   borde: 1px solid white;
 }
-/* line 248, ../sass/screen.scss */
+/* line 246, ../sass/screen.scss */
 div.form.animate {
   -webkit-transition: opacity 0.2s ease-in;
   -moz-transition: opacity 0.2s ease-in;
@@ -421,12 +417,12 @@ div.form.animate {
   transition: opacity 0.2s ease-in;
   opacity: 0;
 }
-/* line 252, ../sass/screen.scss */
+/* line 250, ../sass/screen.scss */
 div.form.animate.resolve {
   display: none;
 }
 
-/* line 260, ../sass/screen.scss */
+/* line 258, ../sass/screen.scss */
 div.social {
   display: block;
   position: absolute;
@@ -440,7 +436,7 @@ div.social {
   transform: translate(200px, 0);
   opacity: 0;
 }
-/* line 268, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 div.social.animate {
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
@@ -453,7 +449,7 @@ div.social.animate {
   -o-transform: translate(0, 0);
   transform: translate(0, 0);
 }
-/* line 278, ../sass/screen.scss */
+/* line 276, ../sass/screen.scss */
 div.social h3 {
   font-family: "proxima_nova_rgbold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 17px;
@@ -465,7 +461,7 @@ div.social h3 {
   margin-right: 10px;
 }
 
-/* line 292, ../sass/screen.scss */
+/* line 290, ../sass/screen.scss */
 section.footer {
   position: fixed;
   bottom: 0;
@@ -477,14 +473,14 @@ section.footer {
   text-align: center;
   opacity: 0;
 }
-/* line 302, ../sass/screen.scss */
+/* line 300, ../sass/screen.scss */
 section.footer p {
   font-family: "proxima_novasemibold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   color: white;
   font-size: 14px;
   font-weight: normal;
 }
-/* line 309, ../sass/screen.scss */
+/* line 307, ../sass/screen.scss */
 section.footer.animate {
   -webkit-transition: opacity 0.4s ease-in;
   -moz-transition: opacity 0.4s ease-in;

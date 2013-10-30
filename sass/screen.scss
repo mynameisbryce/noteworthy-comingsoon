@@ -208,9 +208,7 @@ div.form{
 				background-color: black;
 			}
 
-			&:focus{
-				background-color: black;
-			}
+			
 
 		}
 		input#Email{
@@ -237,7 +235,7 @@ div.form{
 			}
 
 			&:focus{
-				background-color: rgba(0,0,0,.5);
+				background-color: rgba(0,0,0,1);
 				borde: 1px solid $white;
 			}
 		
