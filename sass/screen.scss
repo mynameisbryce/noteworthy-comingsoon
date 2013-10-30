@@ -1,0 +1,323 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+ @import "fonts";
+ @charset "UTF-8";
+ @import "compass/css3/transform";
+ @import "compass/css3";
+ @import "compass/reset";
+
+
+$proximalight: 'proxima_novalight', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$proximabold: 'proxima_nova_rgbold', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$proximasemibold: 'proxima_novasemibold', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$white: rgba(255,255,255,1);
+
+ body{
+
+ }
+
+:after{
+	opacity: 0;
+}
+
+::selection{
+	background-color: #18deb3;
+	color: $white;
+}
+
+textarea, input { outline: none; }
+
+section.bg-container{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
+}
+
+div.overlay{
+	position: absolute;
+	z-index: 5;
+	opacity: 1;
+	background-color: rgba(0,0,0,1);
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	&.animate{
+		background-color: rgba(46,18,6,.5);
+		@include transition(all 1.5s linear);
+
+	}
+
+}
+
+section.content{
+	z-index: 10;
+	background-color: transparent;
+	width: 935px;
+	position: fixed;
+	margin-left: -467px;
+	left: 50%;
+	top: 50%;
+	height: 325px;
+	margin-top: -160px;
+}
+
+div.logo-mark{
+	display: inline-block;
+	@include transform(translate(350px,0));
+	&.move{
+		@include transform(translate(0,0));
+		@include transition(all .6s ease-in);
+	}
+
+	img{
+		@include transform(rotateY(85deg));
+		opacity: 0;
+		&.animate{
+			@include transform(rotateY(0deg));
+			@include transition(all .2s linear);
+			opacity: 1;
+		}
+	}
+}
+
+div.welcome-msg{
+	display: inline-block;
+	background-color: transparent;
+	width: 555px;
+	top: 10px;
+	position: absolute;
+	right: 0;
+	opacity: 0;
+	&.animate{
+		@include transition(opacity .4s ease-in);
+		opacity: 1;
+	}
+}
+
+h1{
+	font-family: $proximalight;
+	font-size: 48px;
+	color: $white;
+	letter-spacing: -1px;
+	font-weight: normal;
+	//-webkit-text-stroke-width: .05px;
+	//-webkit-text-stroke-color: white;
+	-webkit-font-smoothing:antialiased;
+	opacity: 0;
+
+	&.animate{
+		@include transition(all .4s linear);
+
+
+		opacity: 1;
+	}
+}
+
+h2{
+	font-family: $proximalight;
+	font-size: 22px;
+	color: $white;
+	font-weight: normal;
+	letter-spacing: -1px;
+	//-webkit-text-stroke-width: .05px;
+	//-webkit-text-stroke-color: white;
+	-webkit-font-smoothing:antialiased;
+	margin-top: 46px;
+	opacity: 0;
+	@include transform(translate(0,-20px));
+	&.animate{
+		@include transition(all .4s linear);
+		@include transform(translate(0,-20px));
+		@include transition-delay(.2s);
+		opacity: 1;
+	}
+
+}
+
+img.bg{
+	z-index: 0;
+	&.bgheight{
+		height: 100%;
+		width: auto;
+	}
+
+	&.bgwidth{
+		width: 100%;
+		height: auto;
+	}
+}
+
+div.form{
+	opacity: 1;
+	form{
+		display: block;
+		width: 555px;
+		position: absolute;
+		right: 0;
+		bottom: 70px;
+
+		input{
+			width: 249px;
+			height: 55px;
+			@include border-radius(	4px); // border radius
+			@include background-clip(padding-box); // prevents bg color from leaking outside the border
+			background-color: #009075; // layer fill content
+			@include box-shadow(inset 0 1px 0 rgba(255,255,255,.11)); // inner shadow
+			border: none;
+			font-family: $proximabold;
+			color: rgba(255,255,255,0);
+			text-transform: uppercase;
+			font-size: 17px;
+			text-align: center;
+			//-webkit-text-stroke-width: .05px;
+			//-webkit-text-stroke-color: white;
+			-webkit-font-smoothing:antialiased;
+			cursor: pointer;
+
+			opacity: 0;
+			@include transition(background-color .1s linear);
+			@include transition-delay(0s);
+			&.animate{
+				@include transition(all .2s linear);
+				opacity: 1;
+				color: rgba(255,255,255,1);
+
+
+			}
+
+			&:hover{
+				background-color: #007862;
+				@include transition-delay(0s);
+				@include transition(background-color .1s linear);
+				cursor: pointer;
+			}
+
+			&:input{
+				color: $white;
+				background-color: black;
+			}
+
+			&:focus{
+				background-color: black;
+			}
+
+		}
+		input#Email{
+			width: 247px;
+			height: 53px;
+			border: 1px solid rgba(255,255,255,.5); // stroke
+			@include border-radius(4px); // border radius
+			@include background-clip(padding-box); // prevents bg color from leaking outside the border
+			background-color: rgba(0,0,0,.19); // layer fill content
+			text-align: left;
+			//-webkit-text-stroke-width: .05px;
+			//-webkit-text-stroke-color: white;
+			-webkit-font-smoothing:antialiased;
+			padding-left: 20px;
+			margin-right: 20px;
+			cursor: auto;
+			text-transform: none;
+			&:hover{
+				background-color: rgba(0,0,0,.19); // layer fill content
+			}
+
+			&.error{
+				border: 1px solid rgba(255,72,0,.8); // stroke
+			}
+
+			&:focus{
+				background-color: rgba(0,0,0,.5);
+				borde: 1px solid $white;
+			}
+		
+		}
+
+	}
+
+	&.animate{
+		@include transition(opacity .2s ease-in);
+		opacity: 0;
+
+		&.resolve{
+			display: none;
+		}
+	}
+
+}
+
+
+div.social{
+	display: block;
+	position: absolute;
+	width: 555px;
+	right: 0;
+	bottom: 74px;
+	@include transform(translate(200px,0));
+	opacity: 0;
+	&.animate{
+		@include transition(all .2s ease-in);
+		opacity: 1;
+		@include transform(translate(0,0));
+	}
+
+	a.twitter-share-button{}
+
+	div.fb-like{}
+
+	h3{
+		font-family: $proximabold;
+		font-size: 17px;
+		//-webkit-text-stroke-width: .05px;
+		//-webkit-text-stroke-color: white;
+		-webkit-font-smoothing:antialiased;
+		color: $white;
+		letter-spacing: -.5px;
+		text-transform: uppercase;
+		display: inline-block;
+		margin-right: 10px;
+	}
+}
+
+section.footer{
+	position: fixed;
+	bottom: 0;
+	z-index: 20;
+	height: 30px;
+	left: 50%;
+	width: 300px;
+	margin-left: -150px;
+	text-align: center;
+	opacity: 0;
+	p{
+		font-family: $proximasemibold;
+		color: $white;
+		font-size: 14px;
+		font-weight: normal;
+	}
+
+	&.animate{
+		@include transition(opacity .4s ease-in);
+		opacity: .5;
+		//-webkit-text-stroke-width: .05px;
+		//-webkit-text-stroke-color: white;
+		-webkit-font-smoothing:antialiased;
+	}
+
+}
+
+
+
+
+
+
